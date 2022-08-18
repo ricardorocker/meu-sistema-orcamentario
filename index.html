@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Finanças Rocker</title>
+</head>
+
+<body>
+    <h1>Finanças Pessoais - Rocker</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">DESCRIÇÃO</th>
+                <th scope="col">SET</th>
+                <th scope="col">OUT</th>
+                <th scope="col">NOV</th>
+                <th scope="col">DEZ</th>
+                <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">ALUGUEL</th>
+                <td><input type="number" value="0" name="" id="setRow1" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">CONSÓRCIO</th>
+                <td><input type="number" value="0" name="" id="setRow2" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ENERGIA</th>
+                <td><input type="number" value="0" name="" id="setRow3" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">INTERNET FIXA</th>
+                <td><input type="number" value="0" name="" id="setRow4" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">INTERNET MOVEL</th>
+                <td><input type="number" value="0" name="" id="setRow5" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ITAU - CLICK</th>
+                <td><input type="number" value="0" name="" id="setRow6" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ITAU - EXTRA</th>
+                <td><input type="number" value="0" name="" id="setRow7" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ITAU - LATAM PASS</th>
+                <td><input type="number" value="0" name="" id="setRow8" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ITAU - MAGALU</th>
+                <td><input type="number" value="0" name="" id="setRow9" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">ITAU - PÃO DE AÇUCAR</th>
+                <td><input type="number" value="0" name="" id="setRow10" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">NUBANK</th>
+                <td><input type="number" value="0" name="" id="setRow11" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">SANTANDER</th>
+                <td><input type="number" value="0" name="" id="setRow12" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">SICREDI - CARTÃO</th>
+                <td><input type="number" value="0" name="" id="setRow13" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">SICREDI - EMPRÉSTIMO</th>
+                <td><input type="number" value="0" name="" id="setRow14" oninput="updateValue()"></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+                <td><input type="number" value="0" name="" id=""></td>
+            </tr>
+            <tr>
+                <th scope="row">TOTAL</th>
+                <td id="totalSet"></td>
+                <td id="totalOut"></td>
+                <td id="totalNov"></td>
+                <td id="totalDez"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="logica.js"></script>
+</body>
+
+</html>
