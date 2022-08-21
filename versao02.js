@@ -14,6 +14,7 @@ const novembro = [];
 const dezembro = [];
 const total = [];
 
+
 for (i = 0; i < despesas; i++) {
     let valorInput = document.getElementById(`setRow${i}`)
     contasDespesas[i] = {
@@ -42,35 +43,6 @@ for (i = 0; i < despesas; i++) {
             },
         },
     }
-}
-
-function adicionarDespesa(){
-    let descricaoDespesaAdicionar = document.getElementById("descricaoDespesaAdicionar");
-    // console.log(descricaoDespesaAdicionar.value);
-
-    let tabelaFinancas = document.getElementById("tabelaFinancas");
-
-    let row = document.createElement("tr");
-    let nomeNovaDespesa = document.createElement("th");
-    nomeNovaDespesa.innerHTML = descricaoDespesaAdicionar.value;
-
-    let setRow = document.createElement("td");
-    setRow.innerHTML = `<input type="number" class="setembro" value="" name="" id="setRow" oninput="updateValue(this)">`;
-    let outRow = document.createElement("td");
-    outRow.innerHTML = `<input type="number" class="outubro" value="" name="" id="outRow" oninput="updateValue(this)">`;
-    let novRow = document.createElement("td");
-    novRow.innerHTML = `<input type="number" class="novembro" value="" name="" id="novRow" oninput="updateValue(this)">`;
-    let dezRow = document.createElement("td");
-    dezRow.innerHTML = `<input type="number" class="dezembro" value="" name="" id="dezRow" oninput="updateValue(this)">`;
-    let totalRow = document.createElement("td");
-
-    row.appendChild(nomeNovaDespesa);    
-    row.appendChild(setRow);
-    row.appendChild(outRow);
-    row.appendChild(novRow);
-    row.appendChild(dezRow);
-    row.appendChild(totalRow);
-    tabelaFinancas.appendChild(row);
 }
 
 onload = function () {
