@@ -12,7 +12,7 @@
 
 <body>
     <h1>Finanças Pessoais - Rocker</h1>
-    <table class="table">
+    <table class="table m-3">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">DESCRIÇÃO</th>
@@ -26,37 +26,45 @@
         <tbody>
             <tr>
                 <th scope="row">ALUGUEL</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow1" oninput="updateValue(this)"></td>
+                <td><input type="number" class="setembro" value="" name="" id="setRow1" oninput="updateValue(this)">
+                </td>
                 <td><input type="number" class="outubro" name="" id="outRow1" oninput="updateValue(this)"></td>
                 <td><input type="number" class="novembro" name="" id="novRow1" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow1" oninput="updateValue(this)"></td>
-                <tdclass="total"  id="totalRow1"></tdclass=>
+                <tdclass="total" id="totalRow1">
+                    </tdclass=>
             </tr>
             <tr>
                 <th scope="row">CONSÓRCIO</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow2" oninput="updateValue(this)"></td>
+                <td><input type="number" class="setembro" value="" name="" id="setRow2" oninput="updateValue(this)">
+                </td>
                 <td><input type="number" class="outubro" name="" id="outRow2" oninput="updateValue(this)"></td>
                 <td><input type="number" class="novembro" name="" id="novRow2" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow2" oninput="updateValue(this)"></td>
-                <tdclass="total"  id="totalRow2"></tdclass=>
+                <tdclass="total" id="totalRow2">
+                    </tdclass=>
             </tr>
             <tr>
                 <th scope="row">ENERGIA</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow3" oninput="updateValue(this)"></td>
+                <td><input type="number" class="setembro" value="" name="" id="setRow3" oninput="updateValue(this)">
+                </td>
                 <td><input type="number" class="outubro" name="" id="outRow3" oninput="updateValue(this)"></td>
                 <td><input type="number" class="novembro" name="" id="novRow3" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow3" oninput="updateValue(this)"></td>
-                <tdclass="total"  id="totalRow3"></tdclass=>
+                <tdclass="total" id="totalRow3">
+                    </tdclass=>
             </tr>
             <tr>
                 <th scope="row">INTERNET FIXA</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow4" oninput="updateValue(this)"></td>
+                <td><input type="number" class="setembro" value="" name="" id="setRow4" oninput="updateValue(this)">
+                </td>
                 <td><input type="number" class="outubro" name="" id="outRow4" oninput="updateValue(this)"></td>
                 <td><input type="number" class="novembro" name="" id="novRow4" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow4" oninput="updateValue(this)"></td>
-                <tdclass="total"  id="totalRow4"></tdclass=>
+                <tdclass="total" id="totalRow4">
+                    </tdclass=>
             </tr>
-            <tr>
+            <!-- <tr>
                 <th scope="row">INTERNET MOVEL</th>
                 <td><input type="number" class="setembro" value="" name="" id="setRow5" oninput="updateValue(this)"></td>
                 <td><input type="number" class="outubro" name="" id="outRow5" oninput="updateValue(this)"></td>
@@ -135,17 +143,20 @@
                 <td><input type="number" class="novembro" name="" id="novRow14" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow14" oninput="updateValue(this)"></td>
                 <td class="total" id="totalRow14"></td>
-            </tr>
+            </tr> -->
             <tr>
                 <th scope="row">TOTAL</th>
                 <td id="totalDespesasSet"></td>
                 <td id="totalDespesasOut"></td>
                 <td id="totalDespesasNov"></td>
                 <td id="totalDespesasDez"></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr class="table-success">
                 <th scope="row">SALÁRIO</th>
-                <td><input type="number" class="typeNumber" value="0" name="" id="salario" oninput="updateValue(this)"></td>
+                <td><input type="number" class="typeNumber" value="0" name="" id="salario" oninput="updateValue(this)">
+                </td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
@@ -153,7 +164,8 @@
             </tr>
             <tr>
                 <th scope="row">OUTRAS RECEITAS</th>
-                <td><input type="number" class="typeNumber" value="0" name="" id="outrasReceitas" oninput="updateValue(this)"></td>
+                <td><input type="number" class="typeNumber" value="0" name="" id="outrasReceitas"
+                        oninput="updateValue(this)"></td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
                 <td><input type="number" class="typeNumber" name="" id=""></td>
@@ -169,6 +181,12 @@
             </tr>
         </tbody>
     </table>
+    <hr>
+    <div class="m-3 align-middle">
+        <input type="text" class="align-middle" name="" id="" placeholder="Descrição despesa">
+        <button type="button" class="btn btn-secondary ml-3 align-middle" onclick="adicionarDespesa()">Adicionar
+            Despesa</button>
+    </div>
     <script src="index.js"></script>
 </body>
 

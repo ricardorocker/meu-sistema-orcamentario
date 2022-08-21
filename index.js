@@ -94,3 +94,7 @@ function updateValue(elemento) {
     localStorage.setItem("outrasReceitas", outrasReceitas.value);
 }
 
+function adicionarDespesa(){
+    let 
+}
+
