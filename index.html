@@ -24,7 +24,7 @@
             </tr>
         </thead>
         <tbody id="tabelaFinancas">
-            <tr>
+            <!-- <tr>
                 <th scope="row" class="col-2">ALUGUEL</th>
                 <td><input type="number" class="setembro" value="" name="" id="setRow1" oninput="updateValue(this)">
                 </td>
@@ -60,7 +60,7 @@
                 <td><input type="number" class="dezembro" name="" id="dezRow4" oninput="updateValue(this)"></td>
                 <td class="total" id="totalRow4"></td>
             </tr>
-            <!-- <tr>
+            <tr>
                 <th scope="row">INTERNET MOVEL</th>
                 <td><input type="number" class="setembro" value="" name="" id="setRow5" oninput="updateValue(this)">
                 </td>
@@ -195,7 +195,7 @@
     <hr>
 
     <div class="m-3 align-middle">
-        <input type="text" class="align-middle" name="" id="descricaoDespesaAdicionar" placeholder="Descrição despesa">
+        <input type="text" class="align-middle" name="" id="descricaoDespesaAdicionar" placeholder="Descrição despesa" onchange="quantidadeDespesas()">
         <button type="button" class="btn btn-secondary ml-3 align-middle" onclick="adicionarDespesa()">
             Adicionar Despesa
         </button>
