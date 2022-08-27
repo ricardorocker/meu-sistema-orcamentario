@@ -12,6 +12,25 @@
 
 <body>
     <h1>Finanças Pessoais - Rocker</h1>
+
+    <!-- <div class="m-3">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Selecione a quantidade de meses</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+    </div> -->
+
     <table class="table m-3">
         <thead class="thead-dark">
             <tr>
@@ -32,123 +51,6 @@
                 <td><input type="number" class="novembro" name="" id="novRow1" oninput="updateValue(this)"></td>
                 <td><input type="number" class="dezembro" name="" id="dezRow1" oninput="updateValue(this)"></td>
                 <td class="total" id="totalRow1"></td>
-            </tr>
-            <tr>
-                <th scope="row">CONSÓRCIO</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow2" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow2" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow2" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow2" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow2"></td>
-            </tr>
-            <tr>
-                <th scope="row">ENERGIA</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow3" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow3" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow3" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow3" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow3"></td>
-            </tr>
-            <tr>
-                <th scope="row">INTERNET FIXA</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow4" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow4" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow4" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow4" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow4"></td>
-            </tr>
-            <tr>
-                <th scope="row">INTERNET MOVEL</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow5" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow5" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow5" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow5" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow5"></td>
-            </tr>
-            <tr>
-                <th scope="row">ITAU - CLICK</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow6" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow6" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow6" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow6" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow6"></td>
-            </tr>
-            <tr>
-                <th scope="row">ITAU - EXTRA</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow7" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow7" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow7" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow7" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow7"></td>
-            </tr>
-            <tr>
-                <th scope="row">ITAU - LATAM PASS</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow8" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow8" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow8" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow8" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow8"></td>
-            </tr>
-            <tr>
-                <th scope="row">ITAU - MAGALU</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow9" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow9" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow9" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow9" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow9"></td>
-            </tr>
-            <tr>
-                <th scope="row">ITAU - PÃO DE AÇUCAR</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow10" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow10" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow10" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow10" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow10"></td>
-            </tr>
-            <tr>
-                <th scope="row">NUBANK</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow11" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow11" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow11" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow11" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow11"></td>
-            </tr>
-            <tr>
-                <th scope="row">SANTANDER</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow12" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow12" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow12" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow12" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow12"></td>
-            </tr>
-            <tr>
-                <th scope="row">SICREDI - CARTÃO</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow13" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow13" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow13" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow13" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow13"></td>
-            </tr>
-            <tr>
-                <th scope="row">SICREDI - EMPRÉSTIMO</th>
-                <td><input type="number" class="setembro" value="" name="" id="setRow14" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="outubro" name="" id="outRow14" oninput="updateValue(this)"></td>
-                <td><input type="number" class="novembro" name="" id="novRow14" oninput="updateValue(this)"></td>
-                <td><input type="number" class="dezembro" name="" id="dezRow14" oninput="updateValue(this)"></td>
-                <td class="total" id="totalRow14"></td>
             </tr> -->
         </tbody>
     </table>
@@ -156,46 +58,45 @@
     <table class="table m-3">
         <tbody id="tabelaFinancas">
             <tr>
-                <th scope="row" class="col-2">TOTAL</th>
-                <td id="totalDespesasSet"></td>
-                <td id="totalDespesasOut"></td>
-                <td id="totalDespesasNov"></td>
-                <td id="totalDespesasDez"></td>
+                <th scope="row" class="col-2">TOTAL</svg></th>
+                <td id="despesasSet" class="footerTable"></td>
+                <td id="despesasOut" class="footerTable"></td>
+                <td id="despesasNov" class="footerTable"></td>
+                <td id="despesasDez" class="footerTable"></td>
                 <td></td>
             </tr>
             <tr class="table-success">
                 <th scope="row">SALÁRIO</th>
-                <td><input type="number" class="typeNumber" value="0" name="" id="salario" oninput="updateValue(this)">
-                </td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
+                <td><input type="number" id="salarioSet" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="salarioOut" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="salarioNov" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="salarioDez" class="footerTable" oninput="updateValue(this)"></td>
                 <td class="total" id="totalSalario"></td>
             </tr>
             <tr>
                 <th scope="row">OUTRAS RECEITAS</th>
-                <td><input type="number" class="typeNumber" value="0" name="" id="outrasReceitas"
-                        oninput="updateValue(this)"></td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
-                <td><input type="number" class="typeNumber" name="" id=""></td>
+                <td><input type="number" id="outrasReceitasSet" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="outrasReceitasOut" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="outrasReceitasNov" class="footerTable" oninput="updateValue(this)"></td>
+                <td><input type="number" id="outrasReceitasDez" class="footerTable" oninput="updateValue(this)"></td>
                 <td class="total" id="totalOutrasReceitas"></td>
             </tr>
             <tr class="table-active">
                 <th scope="row">SOBRA</th>
-                <td id="sobraSet"></td>
-                <td id="sobraOut"></td>
-                <td id="sobraNov"></td>
-                <td id="sobraDez"></td>
+                <td id="sobraSet" class="footerTable" oninput="updateValue(this)"></td>
+                <td id="sobraOut" class="footerTable" oninput="updateValue(this)"></td>
+                <td id="sobraNov" class="footerTable" oninput="updateValue(this)"></td>
+                <td id="sobraDez" class="footerTable" oninput="updateValue(this)"></td>
                 <td class="total" id="totalSobra"></td>
-            </tr>            
+            </tr>
         </tbody>
     </table>
 
     <hr>
 
     <div class="m-3 align-middle">
-        <input type="text" class="align-middle" name="" id="descricaoDespesaAdicionar" placeholder="Descrição despesa" onchange="quantidadeDespesas()">
+        <input type="text" class="align-middle" name="" id="descricaoDespesaAdicionar" placeholder="Descrição despesa"
+            onchange="quantidadeDespesas()">
         <button type="button" class="btn btn-secondary ml-3 align-middle" onclick="adicionarDespesa()">
             Adicionar Despesa
         </button>
