@@ -229,11 +229,13 @@ function updateValue(elemento) {
         } else {
             console.log("ELEMENT", contasDespesas);
 
-            if (contasDespesas[i].linha[monthClass].descricao == elemento.id) {
-                contasDespesas[i].linha[monthClass].valor = parseInt(elemento.value);
-            }
+            if (contasDespesas[i].linha) {
+                if (contasDespesas[i].linha[monthClass].descricao == elemento.id) {
+                    contasDespesas[i].linha[monthClass].valor = parseInt(elemento.value);
+                }
 
-            somaDespesas += contasDespesas[i].linha[monthClass].valor;
+                somaDespesas += contasDespesas[i].linha[monthClass].valor;
+            }
         }
 
         switch (monthClass) {
@@ -258,6 +260,18 @@ function updateValue(elemento) {
                     contasDespesas[0].mes1.salario.valor = parseInt(elemento.value);
                 } else if (elemento.id == "outrasReceitasSet") {
                     contasDespesas[0].mes1.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioOut") {
+                    contasDespesas[0].mes2.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasOut") {
+                    contasDespesas[0].mes2.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioNov") {
+                    contasDespesas[0].mes3.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasNov") {
+                    contasDespesas[0].mes3.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioDez") {
+                    contasDespesas[0].mes4.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasDez") {
+                    contasDespesas[0].mes4.outrasReceitas.valor = parseInt(elemento.value);
                 }
                 break;
         }
