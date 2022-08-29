@@ -194,13 +194,30 @@ function adicionarDespesa() {
 }
 
 onload = function () {
-    // contasDespesas = [];
+    // for (var member in contasDespesas) delete contasDespesas[member];    
+    // for (var member in contasDespesasJSON) delete contasDespesasJSON[member];
 
-    // console.log("contasDespesas", contasDespesas);
+    // console.log("contasDespesas ANTES", contasDespesas);
 
-    // let contasDespesasJSON = JSON.parse(localStorage.getItem("contasDespesasJSON"))
+    let contasDespesasJSON = JSON.parse(localStorage.getItem("contasDespesasJSON"));
 
-    // for (i = 1; i < despesas; i++) {
+    contasDespesas = contasDespesasJSON;
+    
+    console.log("contasDespesas DEPOIS", contasDespesas);
+
+    // console.log("contasDespesasJSON", contasDespesasJSON);
+
+    contasDespesas.forEach((element, i) => {
+        console.log(`PASSOU ${i+1}ª vez`, element);
+        
+        if(i==0){
+            console.log("despesas", element.mes1.despesas.valor)
+            despesasSet.innerHTML = element.mes1.despesas.valor;
+        }
+        
+    });
+
+    // for (i = 0; i < contasDespesas.length; i++) {
     //     contasDespesas[i].linha.setembro.valor = contasDespesasJSON[i].linha.setembro.valor;
 
     //     let elemento = document.getElementById(`setRow${i}`);
@@ -210,24 +227,10 @@ onload = function () {
     //     }
     // }
 
-    // let totalDespesasSetPego = localStorage.getItem('somaDespesas');
-    // totalDespesasSet.innerHTML = totalDespesasSetPego;
-
-    // let salarioPego = localStorage.getItem('salario');
-    // salario.value = salarioPego;
-
-    // let outrasReceitasPego = localStorage.getItem('outrasReceitas');
-    // outrasReceitas.value = outrasReceitasPego;
-    // sobraSet.innerHTML = (parseInt(salarioPego) + parseInt(outrasReceitasPego)) - totalDespesasSetPego;
-
 }
 
 function updateValue(elemento) {
     let monthClass = elemento.className;
-
-    console.log("elemento", elemento);
-    console.log("elemento.pai", elemento.parentElement);
-    console.log("elemento.pai do pai do pau", ((elemento.parentElement).parentElement).parentElement.id);
 
     somaDespesas = 0;
     
@@ -304,12 +307,5 @@ function updateValue(elemento) {
         
     }
 
-    console.log("contasDespesas", contasDespesas);
-
-    // localStorage.setItem("somaDespesas", somaDespesas);
-    // localStorage.setItem("contasDespesasJSON", JSON.stringify(contasDespesas));
-
-    // sobraSet.innerHTML = (parseInt(salario.value) + parseInt(outrasReceitas.value)) - somaDespesas;
-    // localStorage.setItem("salario", salario.value);
-    // localStorage.setItem("outrasReceitas", outrasReceitas.value);
+    localStorage.setItem("contasDespesasJSON", JSON.stringify(contasDespesas));
 }
