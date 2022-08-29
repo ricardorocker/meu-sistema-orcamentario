@@ -1,17 +1,24 @@
 let despesasSet = document.getElementById("despesasSet");
+let despesasOut = document.getElementById("despesasOut");
+let despesasNov = document.getElementById("despesasNov");
+let despesasDez = document.getElementById("despesasDez");
 let sobraMes1 = document.getElementById("sobraMes1");
 let sobraMes2 = document.getElementById("sobraMes2");
-let sobraMes1Mes3 = document.getElementById("sobraMes3");
+let sobraMes3 = document.getElementById("sobraMes3");
 let sobraMes4 = document.getElementById("sobraMes4");
-let sobraOut = document.getElementById("sobraOut");
-let sobraNov = document.getElementById("sobraNov");
-let sobraDez = document.getElementById("sobraDez");
 let salario = document.getElementById("salario");
+let salarioMes1 = document.querySelector(".setembro#salario");
+let salarioMes2 = document.querySelector(".outubro#salario");
+let salarioMes3 = document.querySelector(".novembro#salario");
+let salarioMes4 = document.querySelector(".dezembro#salario");
 let outrasReceitas = document.getElementById("outrasReceitas");
+let outrasReceitasMes1 = document.querySelector(".setembro#outrasReceitas");
+let outrasReceitasMes2 = document.querySelector(".outubro#outrasReceitas");
+let outrasReceitasMes3 = document.querySelector(".novembro#outrasReceitas");
+let outrasReceitasMes4 = document.querySelector(".dezembro#outrasReceitas");
 
 let somaDespesas = 0;
 let sobra = 0;
-// let despesas = 15;
 
 let contasDespesas = [];
 let linha = [];
@@ -203,18 +210,39 @@ onload = function () {
 
     contasDespesas = contasDespesasJSON;
     
+
+    
+    console.log("salarioMes1", salarioMes1);
     console.log("contasDespesas DEPOIS", contasDespesas);
 
     // console.log("contasDespesasJSON", contasDespesasJSON);
 
     contasDespesas.forEach((element, i) => {
-        console.log(`PASSOU ${i+1}ª vez`, element);
-        
-        if(i==0){
+        console.log(`PASSOU ${i + 1}ª vez`, element);
+
+        if (i == 0) {
             console.log("despesas", element.mes1.despesas.valor)
             despesasSet.innerHTML = element.mes1.despesas.valor;
+            despesasOut.innerHTML = element.mes2.despesas.valor;
+            despesasNov.innerHTML = element.mes3.despesas.valor;
+            despesasDez.innerHTML = element.mes4.despesas.valor;
+
+            sobraMes1.innerHTML = element.mes1.sobra.valor;
+            sobraMes2.innerHTML = element.mes2.sobra.valor;
+            sobraMes3.innerHTML = element.mes3.sobra.valor;
+            sobraMes4.innerHTML = element.mes4.sobra.valor;
+
+            salarioMes1.value = element.mes1.salario.valor;
+            salarioMes2.value = element.mes2.salario.valor;
+            salarioMes3.value = element.mes3.salario.valor;
+            salarioMes4.value = element.mes4.salario.valor;
+
+            outrasReceitasMes1.value = element.mes1.outrasReceitas.valor;
+            outrasReceitasMes2.value = element.mes2.outrasReceitas.valor;
+            outrasReceitasMes3.value = element.mes3.outrasReceitas.valor;
+            outrasReceitasMes4.value = element.mes4.outrasReceitas.valor;
         }
-        
+
     });
 
     // for (i = 0; i < contasDespesas.length; i++) {
@@ -233,15 +261,15 @@ function updateValue(elemento) {
     let monthClass = elemento.className;
 
     somaDespesas = 0;
-    
+
     for (i = 0; i < contasDespesas.length; i++) {
         console.log("ELEMENT", contasDespesas);
-        
+
         if (contasDespesas[i] !== contasDespesas[0] && ((elemento.parentElement).parentElement).parentElement.id !== "tabelaFooter") {
             if (contasDespesas[i].linha[monthClass].descricao == elemento.id) {
                 contasDespesas[i].linha[monthClass].valor = parseInt(elemento.value);
             }
-            
+
             somaDespesas += contasDespesas[i].linha[monthClass].valor;
         }
 
@@ -289,7 +317,7 @@ function updateValue(elemento) {
                 sobraMes3.innerHTML = sobra;
                 contasDespesas[0].mes3.sobra.valor = sobra;
                 break;
-            case "dezembro":                
+            case "dezembro":
                 if (elemento.id == "salario") {
                     contasDespesas[0].mes4.salario.valor = parseInt(elemento.value);
                 } else if (elemento.id == "outrasReceitas") {
@@ -304,7 +332,7 @@ function updateValue(elemento) {
                 contasDespesas[0].mes4.sobra.valor = sobra;
                 break;
         }
-        
+
     }
 
     localStorage.setItem("contasDespesasJSON", JSON.stringify(contasDespesas));
