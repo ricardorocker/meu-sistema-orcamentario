@@ -129,9 +129,13 @@ function adicionarDespesa() {
 
     let row = document.createElement("tr");
     let nomeNovaDespesa = document.createElement("th");
-    nomeNovaDespesa.innerHTML = `${descricaoDespesaAdicionar.value} <button scr="../meu-sistema-orcamentario/bin.png" class="border-0 bg-transparent ml-5" onclick="onRemove(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>`;
+    nomeNovaDespesa.innerHTML = `${descricaoDespesaAdicionar.value.toUpperCase()}`;
+
+    // nomeNovaDespesa.innerHTML = `${descricaoDespesaAdicionar.value.toUpperCase()} 
+    // <button scr="../meu-sistema-orcamentario/bin.png" class="border-0 bg-transparent ml-5" onclick="onRemove(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+    // <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+    // <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+    // `;
 
     let tdSet = document.createElement("td");
     let inputSet = document.createElement("input");
@@ -204,6 +208,10 @@ function adicionarDespesa() {
                 },
             }
         });
+
+
+    localStorage.setItem("contasDespesasJSON", JSON.stringify(contasDespesas));
+    descricaoDespesaAdicionar.value = "";
     console.log("contasDespesas", contasDespesas);
 }
 
@@ -213,7 +221,7 @@ onload = function () {
 
     let contasDespesasJSON = JSON.parse(localStorage.getItem("contasDespesasJSON"));
 
-    if (contasDespesas.length > 1) {
+    if (contasDespesasJSON) {
         contasDespesas = contasDespesasJSON;
     }
 
@@ -221,7 +229,7 @@ onload = function () {
     console.log("contasDespesas DEPOIS", contasDespesas);
 
 
-    if (contasDespesas.length > 1 ) {
+    if (contasDespesas.length > 1) {
         contasDespesas.forEach((element, i) => {
             console.log(`PASSOU ${i + 1}ª vez`, element);
 
@@ -254,9 +262,13 @@ onload = function () {
 
                 let row = document.createElement("tr");
                 let nomeNovaDespesa = document.createElement("th");
-                nomeNovaDespesa.innerHTML = `${element.linha.nomeDespesa} <button scr="../meu-sistema-orcamentario/bin.png" class="border-0 bg-transparent ml-5" onclick="onRemove(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>`;
+                nomeNovaDespesa.innerHTML = `${element.linha.nomeDespesa.toUpperCase()}`;
+
+                    // nomeNovaDespesa.innerHTML = `${element.linha.nomeDespesa.toUpperCase()} 
+                    // <button scr="../meu-sistema-orcamentario/bin.png" class="border-0 bg-transparent ml-5" onclick="onRemove(this)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    // <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    // <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                    // `;
 
                 let tdSet = document.createElement("td");
                 let inputSet = document.createElement("input");
@@ -331,7 +343,7 @@ function updateValue(elemento) {
 
             somaDespesas += contasDespesas[i].linha[monthClass].valor;
         }
-        
+
         switch (monthClass) {
             case "setembro":
                 if (elemento.id == "salario") {
