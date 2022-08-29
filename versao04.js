@@ -1,16 +1,9 @@
 let despesasSet = document.getElementById("despesasSet");
-let sobraMes1 = document.getElementById("sobraMes1");
-let sobraMes2 = document.getElementById("sobraMes2");
-let sobraMes1Mes3 = document.getElementById("sobraMes3");
-let sobraMes4 = document.getElementById("sobraMes4");
-let sobraOut = document.getElementById("sobraOut");
-let sobraNov = document.getElementById("sobraNov");
-let sobraDez = document.getElementById("sobraDez");
+let sobraSet = document.getElementById("sobraSet");
 let salario = document.getElementById("salario");
 let outrasReceitas = document.getElementById("outrasReceitas");
 
 let somaDespesas = 0;
-let sobra = 0;
 // let despesas = 15;
 
 let contasDespesas = [];
@@ -225,83 +218,68 @@ onload = function () {
 function updateValue(elemento) {
     let monthClass = elemento.className;
 
-    console.log("elemento", elemento);
-    console.log("elemento.pai", elemento.parentElement);
-    console.log("elemento.pai do pai do pau", ((elemento.parentElement).parentElement).parentElement.id);
+    console.log("", elemento.className)
 
     somaDespesas = 0;
-    
-    for (i = 0; i < contasDespesas.length; i++) {
-        console.log("ELEMENT", contasDespesas);
-        
-        if (contasDespesas[i] !== contasDespesas[0] && ((elemento.parentElement).parentElement).parentElement.id !== "tabelaFooter") {
-            if (contasDespesas[i].linha[monthClass].descricao == elemento.id) {
-                contasDespesas[i].linha[monthClass].valor = parseInt(elemento.value);
-            }
-            
-            somaDespesas += contasDespesas[i].linha[monthClass].valor;
-        }
 
+    for (i = 0; i < contasDespesas.length; i++) {
+
+        if (contasDespesas[i] == contasDespesas[0] && elemento.className !== "footerTable") {
+            // ERRO AQUI ENTROU QUANDO NAO ERA PRA TER ENTRADO
+        } else {
+            console.log("ELEMENT", contasDespesas);
+
+            if (contasDespesas[i].linha) {
+                if (contasDespesas[i].linha[monthClass].descricao == elemento.id) {
+                    contasDespesas[i].linha[monthClass].valor = parseInt(elemento.value);
+                }
+
+                somaDespesas += contasDespesas[i].linha[monthClass].valor;
+            }
+        }
 
         switch (monthClass) {
             case "setembro":
-                if (elemento.id == "salario") {
-                    contasDespesas[0].mes1.salario.valor = parseInt(elemento.value);
-                } else if (elemento.id == "outrasReceitas") {
-                    contasDespesas[0].mes1.outrasReceitas.valor = parseInt(elemento.value);
-                }
-                else {
-                    despesasSet.innerHTML = somaDespesas;
-                    contasDespesas[0].mes1.despesas.valor = somaDespesas;
-                }
-                sobra = (contasDespesas[0].mes1.salario.valor + contasDespesas[0].mes1.outrasReceitas.valor) - somaDespesas;
-                sobraMes1.innerHTML = sobra;
-                contasDespesas[0].mes1.sobra.valor = sobra;
+                despesasSet.innerHTML = somaDespesas;
+                contasDespesas[0].mes1.despesas.valor = somaDespesas;
                 break;
             case "outubro":
-                if (elemento.id == "salario") {
-                    contasDespesas[0].mes2.salario.valor = parseInt(elemento.value);
-                } else if (elemento.id == "outrasReceitas") {
-                    contasDespesas[0].mes2.outrasReceitas.valor = parseInt(elemento.value);
-                }
-                else {
-                    despesasOut.innerHTML = somaDespesas;
-                    contasDespesas[0].mes2.despesas.valor = somaDespesas;
-                }
-                sobra = (contasDespesas[0].mes2.salario.valor + contasDespesas[0].mes2.outrasReceitas.valor) - somaDespesas;
-                sobraMes2.innerHTML = sobra;
-                contasDespesas[0].mes2.sobra.valor = sobra;
+                despesasOut.innerHTML = somaDespesas;
+                contasDespesas[0].mes2.despesas.valor = somaDespesas;
                 break;
             case "novembro":
-                if (elemento.id == "salario") {
-                    contasDespesas[0].mes3.salario.valor = parseInt(elemento.value);
-                } else if (elemento.id == "outrasReceitas") {
-                    contasDespesas[0].mes3.outrasReceitas.valor = parseInt(elemento.value);
-                }
-                else {
-                    despesasNov.innerHTML = somaDespesas;
-                    contasDespesas[0].mes3.despesas.valor = somaDespesas;
-                }
-                sobra = (contasDespesas[0].mes3.salario.valor + contasDespesas[0].mes3.outrasReceitas.valor) - somaDespesas;
-                sobraMes3.innerHTML = sobra;
-                contasDespesas[0].mes3.sobra.valor = sobra;
+                despesasNov.innerHTML = somaDespesas;
+                contasDespesas[0].mes3.despesas.valor = somaDespesas;
                 break;
-            case "dezembro":                
-                if (elemento.id == "salario") {
+            case "dezembro":
+                despesasDez.innerHTML = somaDespesas;
+                contasDespesas[0].mes4.despesas.valor = somaDespesas;
+                break;
+            case "footerTable":
+                if (elemento.id == "salarioSet") {
+                    contasDespesas[0].mes1.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasSet") {
+                    contasDespesas[0].mes1.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioOut") {
+                    contasDespesas[0].mes2.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasOut") {
+                    contasDespesas[0].mes2.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioNov") {
+                    contasDespesas[0].mes3.salario.valor = parseInt(elemento.value);
+                } else if (elemento.id == "outrasReceitasNov") {
+                    contasDespesas[0].mes3.outrasReceitas.valor = parseInt(elemento.value);
+                } else if (elemento.id == "salarioDez") {
                     contasDespesas[0].mes4.salario.valor = parseInt(elemento.value);
-                } else if (elemento.id == "outrasReceitas") {
+                } else if (elemento.id == "outrasReceitasDez") {
                     contasDespesas[0].mes4.outrasReceitas.valor = parseInt(elemento.value);
                 }
-                else {
-                    despesasDez.innerHTML = somaDespesas;
-                    contasDespesas[0].mes4.despesas.valor = somaDespesas;
-                }
-                sobra = (contasDespesas[0].mes4.salario.valor + contasDespesas[0].mes4.outrasReceitas.valor) - somaDespesas;
-                sobraMes4.innerHTML = sobra;
-                contasDespesas[0].mes4.sobra.valor = sobra;
                 break;
         }
-        
+
+        let sobra = (contasDespesas[0].mes1.salario.valor + contasDespesas[0].mes1.outrasReceitas.valor) - somaDespesas;
+        sobraSet.innerHTML = sobra;
+
+        contasDespesas[0].mes1.sobra.valor = sobra;
     }
 
     console.log("contasDespesas", contasDespesas);
