@@ -403,6 +403,7 @@ function updateValue(elemento) {
 }
 
 function ExportToExcel(type, fn, dl) {
+    window.alert("Funcionalidade em processo de criação.")
     var elt = document.getElementById('finacasPessoais');
     var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
     return dl ?
