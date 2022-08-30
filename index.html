@@ -11,59 +11,64 @@
 </head>
 
 <body>
-    <h1>Finanças Pessoais</h1>
+    <h1 class="mx-3">
+        Finanças Pessoais
+        <div class="float-right">
+            <button type="button" class="btn btn-outline-success" onclick="ExportToExcel()">
+                Download Excel
+            </button>
+        </div>
+    </h1>
 
-    <table class="table m-3">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">DESCRIÇÃO</th>
-                <th scope="col">SET</th>
-                <th scope="col">OUT</th>
-                <th scope="col">NOV</th>
-                <th scope="col">DEZ</th>
-                <th scope="col">TOTAL</th>
-            </tr>
-        </thead>
-        <tbody id="tabelaFinancas">
-        </tbody>
-    </table>
 
-    <table class="table m-3">
-        <tbody id="tabelaFooter">
-            <tr>
-                <th scope="row" class="col-2">TOTAL DESPESAS</svg></th>
-                <td id="despesasSet" class="setembro"></td>
-                <td id="despesasOut" class="outubro"></td>
-                <td id="despesasNov" class="novembro"></td>
-                <td id="despesasDez" class="dezembro"></td>
-                <td></td>
-            </tr>
-            <tr class="table-success">
-                <th scope="row">SALÁRIO</th>
-                <td><input type="number" id="salario" class="setembro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="salario" class="outubro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="salario" class="novembro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="salario" class="dezembro" oninput="updateValue(this)"></td>
-                <td class="total" id="totalSalario"></td>
-            </tr>
-            <tr>
-                <th scope="row">OUTRAS RECEITAS</th>
-                <td><input type="number" id="outrasReceitas" class="setembro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="outrasReceitas" class="outubro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="outrasReceitas" class="novembro" oninput="updateValue(this)"></td>
-                <td><input type="number" id="outrasReceitas" class="dezembro" oninput="updateValue(this)"></td>
-                <td class="total" id="totalOutrasReceitas"></td>
-            </tr>
-            <tr class="table-active">
-                <th scope="row">SOBRA</th>
-                <td id="sobraMes1" class="setembro" oninput="updateValue(this)"></td>
-                <td id="sobraMes2" class="outubro" oninput="updateValue(this)"></td>
-                <td id="sobraMes3" class="novembro" oninput="updateValue(this)"></td>
-                <td id="sobraMes4" class="dezembro" oninput="updateValue(this)"></td>
-                <td class="total" id="totalSobra"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="px-3">
+        <table class="table" id="finacasPessoais">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="col-4">DESCRIÇÃO</th>
+                    <th scope="col" class="col-2">SET</th>
+                    <th scope="col" class="col-2">OUT</th>
+                    <th scope="col" class="col-2">NOV</th>
+                    <th scope="col" class="col-2">DEZ</th>
+                    <!-- <th scope="col" class="col-1">
+                    </th> -->
+                </tr>
+            </thead>
+            <tbody id="tabelaFinancas">
+            </tbody>
+
+            <tbody id="tabelaFooter">
+                <tr>
+                    <th scope="row" class="col-2">TOTAL DESPESAS</svg></th>
+                    <td id="despesasSet" class="setembro"></td>
+                    <td id="despesasOut" class="outubro"></td>
+                    <td id="despesasNov" class="novembro"></td>
+                    <td id="despesasDez" class="dezembro"></td>
+                </tr>
+                <tr class="table-success">
+                    <th scope="row">SALÁRIO</th>
+                    <td><input type="number" id="salario" class="setembro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="salario" class="outubro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="salario" class="novembro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="salario" class="dezembro" oninput="updateValue(this)"></td>
+                </tr>
+                <tr>
+                    <th scope="row">OUTRAS RECEITAS</th>
+                    <td><input type="number" id="outrasReceitas" class="setembro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="outrasReceitas" class="outubro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="outrasReceitas" class="novembro" oninput="updateValue(this)"></td>
+                    <td><input type="number" id="outrasReceitas" class="dezembro" oninput="updateValue(this)"></td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">SOBRA</th>
+                    <td id="sobraMes1" class="setembro" oninput="updateValue(this)"></td>
+                    <td id="sobraMes2" class="outubro" oninput="updateValue(this)"></td>
+                    <td id="sobraMes3" class="novembro" oninput="updateValue(this)"></td>
+                    <td id="sobraMes4" class="dezembro" oninput="updateValue(this)"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <hr>
 
@@ -82,7 +87,9 @@
             Esse site foi feito por <a href="https://github.com/ricardorocker" target=”_blank”>Ricardo S. Rocker</a>
         </div>
     </footer>
+
     <script src="index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 </body>
 
 </html>
